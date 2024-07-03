@@ -14,13 +14,13 @@ public class Main{
 
       switch (choise) {
         case 1:
-          addItool();        
+          addItool(scanner);        
           break;
         case 2:
           showItools();
           break;
         case 3:
-          Calculate();
+          Calculate(scanner);
           break;
         case 4:
           System.out.println("Exiting...");
@@ -35,17 +35,17 @@ public class Main{
   }
 
   //functions
-  private void addItool(){
+  private static void addItool(Scanner scanner){
     System.out.println("Enter Itool name: ");
     String itoolname = scanner.nextLine();
     System.out.println("Enter Itool porcentage amount:% ");
     double amount = scanner.nextDouble();
 
-    Itool itool = new Itool(name, amount);
+    Itool itool = new Itool(itoolname, amount);
     itoolist.add(itool);
   }
 
-  private void showItools(){
+  private static void showItools(){
     if (!itoolist.isEmpty()) {
       for (Itool itool : itoolist) {
         System.out.println(itool);
@@ -53,6 +53,23 @@ public class Main{
       return;
     }
     System.out.println("[!] No Itools to show!");
+  }
+
+  public static void Calculate(Scanner scanner){
+    System.out.println("Amount to invest:$ ");
+    double uamaunt = scanner.nextDouble();
+
+    double rtotal=0;
+    for (Itool itool : itoolist) {
+       double rperitool=0;
+       rperitool= uamaunt*itool.getPorcentaje()/100;
+       rtotal= rtotal+rperitool;
+       System.out.println("Para "+itool.getNombre()+" con porcentaje de: "+itool.getPorcentaje()+"% se tiene que invertir: $"+rperitool);
+
+    }
+    if((uamaunt - rtotal) !=0){
+      System.out.println("Sobran para invertir: $"+(uamaunt - rtotal));
+    }
   }
 
   

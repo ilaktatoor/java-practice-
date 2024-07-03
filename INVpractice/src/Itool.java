@@ -11,6 +11,17 @@ public class Itool{
   }
 
   //metodos
+  public String getNombre(){
+    return nombre;
+  }
 
+  public double getPorcentaje(){
+    return porcentaje;
+  }
+
+  @Override
+  public String toString(){
+    return ""+nombre+" "+porcentaje+"%";
+  }
 
 }
