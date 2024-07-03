@@ -8,9 +8,9 @@ test repo to practice java projects
 
 
 ### Learned
-[x] ArrayLists
-[x] Abstraction
-[x] Objects (POO basics)
-[ ] SQL connection
+- [x] ArrayLists
+- [x] Abstraction
+- [x] Objects (POO basics)
+- [ ] SQL connection
 
 
